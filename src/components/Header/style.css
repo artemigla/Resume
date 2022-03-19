@@ -1,0 +1,46 @@
+*,
+html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    background-color: #57a1f4;
+}
+
+.titleHeader {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.container::before,
+.container::after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 35%;
+    height: 3px;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.container::before {
+    margin-left: -100%;
+    left: -7px;
+}
+
+.container::after {
+    margin-right: -100%;
+    right: -7px;
+}
+
+.title {
+    color: rgb(255, 255, 255);
+    font-weight: normal;
+}
