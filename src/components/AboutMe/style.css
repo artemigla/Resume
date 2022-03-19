@@ -1,0 +1,73 @@
+.wrapper {
+    width: 100vw;
+    height: 70vh;
+}
+
+.avatar {
+    width: 170px;
+    height: 170px;
+    margin: 12px 0px 12px 12px;
+    border-radius: 50%;
+}
+
+.img {
+    width: 15%;
+    height: 12%;
+}
+
+.aboutMe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 12px 0px 12px 0px;
+}
+
+.content {
+    display: flex;
+    width: 100%;
+}
+
+.description {
+    margin-top: 12px;
+    width: 21%;
+}
+
+.name {
+    font-size: large;
+}
+
+@media screen and (max-width: 1020px) {
+    .wrapper {
+        width: 100vw;
+        flex-direction: column;
+    }
+
+    .img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 190px;
+        height: 210px;
+    }
+
+    .avatar {
+        width: 170px;
+        height: 170px;
+        margin: 12px 0px 12px 12px;
+        border-radius: 50%;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .description {
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
