@@ -7,40 +7,32 @@ html {
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     height: 15vh;
     background-color: #57a1f4;
 }
 
 .titleHeader {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.container::before,
-.container::after {
-    content: "";
-    display: inline-block;
-    vertical-align: middle;
-    width: 35%;
-    height: 3px;
-    background-color: #ffffff;
-    position: relative;
-}
-
-.container::before {
-    margin-left: -100%;
-    left: -7px;
-}
-
-.container::after {
-    margin-right: -100%;
-    right: -7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .title {
     color: rgb(255, 255, 255);
     font-weight: normal;
+}
+
+.selectTheme {
+    margin-block-end: auto;
+    margin-left: auto;
+    margin-top: 17px;
+    margin-right: 30px;
+    background: none;
+}
+
+.selectTheme,
+button {
+    border: none;
 }
