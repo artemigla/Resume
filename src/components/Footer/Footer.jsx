@@ -1,19 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './style.css';
 import { FaGithub, FaTelegram } from 'react-icons/fa';
+import { ThemeContext } from '../ColorsThemes/ThemeContext';
 
 export const Footer = () => {
+    const { isDark, theme } = useContext(ThemeContext);
     return (
-        <footer className='footer'>
-            <h3>Contacts</h3>
+        <footer className='footer' style={{ background: isDark ? theme.background : theme.background }}>
+            <h3 style={{ color: isDark ? theme.text : theme.text }}>Contacts</h3>
             <nav className='navigation'>
                 <a
-                    className='github'
                     href="https://github.com/artemigla/"
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <FaGithub />
+                    <FaGithub style={{ color: isDark ? theme.text : theme.text }} />
                 </a>
                 <a
                     className='telegram'
@@ -22,9 +23,8 @@ export const Footer = () => {
                     rel='noreferrer'>
                     <FaTelegram />
                 </a>
-
             </nav>
-            <p>Пишите на почту: <a
+            <p style={{ color: isDark ? theme.text : theme.text }}>Пишите на почту: <a
                 href='mailto:igla.artem@gmail.com'
                 target='_blank'
                 rel='noreferrer'>

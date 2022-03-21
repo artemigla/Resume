@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: silver;
+    border: 1px solid black;
 }
 
 .navigation {
@@ -15,10 +15,6 @@
     align-items: center;
     font-size: 30px;
     gap: 10px;
-}
-
-.github {
-    color: black;
 }
 
 .telegram {

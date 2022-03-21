@@ -1,26 +1,30 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { FaSun, FaMoon } from 'react-icons/fa';
+import { darkMode, lightMode } from '../ColorsThemes/ColorsTheme';
+import { ThemeContext } from '../ColorsThemes/ThemeContext';
 import './style.css';
 
 export const Header = ({ title }) => {
-    const [selectTheme, setSelectTheme] = useState(false);
+    const { toggle, isDark } = useContext(ThemeContext);
 
-    const clickTheme = () => {
-        setSelectTheme(!selectTheme)
-    }
+    const clickTheme = () => toggle(!isDark);
+
     return (
-        <header className='container'>
-            <div></div>
-            <div className='titleHeader'>
-                <h1 className='title'>{title}</h1>
+        <header className='container' style={{ background: isDark ? darkMode.background : lightMode.background }}>
+            <div className='titleHeader' >
+                <h1 className='title' style={{ color: isDark ? darkMode.text : lightMode.text }}>{title}</h1>
             </div>
-            <button
-                className='selectTheme'
-                type='button'
-                onClick={clickTheme}
-            >
-                {!selectTheme ? <FaSun size={21} color={'white'} /> : <FaMoon size={21} color={'white'} />}
-            </button>
+            <div className='selectTheme'>
+                <button
+
+                    className='icon'
+                    type='button'
+                    onClick={clickTheme}
+                >
+                    {!isDark ? <FaSun size={21} color={isDark ? darkMode.text : lightMode.text} /> :
+                        <FaMoon size={21} color={isDark ? darkMode.text : lightMode.text} />}
+                </button>
+            </div>
         </header>
     );
 }
